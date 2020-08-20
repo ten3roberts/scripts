@@ -1,0 +1,8 @@
+#!/bin/sh
+
+# This script sets the mouse acceleration of the device $1 to $2
+DEVICE=`[ "$1" ] && echo "$1" || echo "mouse"`
+DEVICE=`xinput --list | grep -i "$DEVICE" | sed -n 1p `
+echo "Device: $DEVICE"
+DEVICE=`echo "$DEVICE" | grep -o "id=[0-9]*" | cut -d"=" -f2`
+xinput --set-prop "$DEVICE" 'libinput Accel Speed' "$2" 
