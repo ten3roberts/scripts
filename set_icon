@@ -1,0 +1,11 @@
+#!/bin/sh                                                                                           
+
+# Usage: setWinIcon [title] [icon]                                                                  
+# - title: a string to match within the title of the window                                         
+# - icon: path to the icon file. Use png for best results.                                          
+
+ICONPATH=`window_icon.py $1`                                                                                       
+echo "Path: $ICONPATH"
+[ -z `echo $ICONPATH | grep \.png$` ] && echo "Converting to png" && mkdir -p $HOME/.icons/convert && NEW_ICONPATH=$HOME/.icons/convert/`basename $ICONPATH | sed s/\.svg/.png/` && echo "Converting to $NEW_ICONPATH" && convert -antialias -background none $ICONPATH $NEW_ICONPATH && ICONPATH=$NEW_ICONPATH
+
+xseticon -id "$WINDOWID" "$ICONPATH"                                                                  
