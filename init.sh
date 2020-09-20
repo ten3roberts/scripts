@@ -5,7 +5,7 @@
 
 # Just make sure the DE initializes it's configuration first
 # Semaphores are for newbs
-sleep 10
+sleep 5
 
 # Update rust
 rustup update
