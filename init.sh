@@ -16,6 +16,7 @@ xset r rate 250 50
 # Disable mouse acceleration
 maccel G403 -1
 
+ksuperkey
 # Autolaunch programs
 
 # Start CKB-next
