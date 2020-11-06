@@ -8,7 +8,7 @@
 sleep 5
 
 # Update rust
-rustup update
+rustup update &
 # Remap the forgotten key to escape for Evil
 setxkbmap -option caps:escape
 # Make repeating keys faster
