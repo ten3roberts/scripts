@@ -1,0 +1,6 @@
+#!/bin/bash
+
+result=`wmctrl -lx | grep -v ' -1' | tr -s ' ' | sed 's|\S*\.||' | sort -k 2 | sed -n "$1p"`
+
+result=`echo $result | cut -d ' ' -f 3`
+[ -z "$result" ] || switch_app $result
