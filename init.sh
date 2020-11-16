@@ -1,11 +1,8 @@
 #/bin/sh
 # This is a script to run after graphical login to setup things like mouse acceleration, key repeat rate and many others
 
-# This requires the loading of .zprofile to set path variables accordingly
-
-# Just make sure the DE initializes it's configuration first
-# Semaphores are for newbs
-sleep 5
+# Load XResources
+xrdb $HOME/.config/xresources/Xresources
 
 # Update rust
 rustup update &
@@ -25,5 +22,5 @@ ckb-next --background &
 
 killall redshift-gtk
 redshift-gtk &
+
 disown
-exit
