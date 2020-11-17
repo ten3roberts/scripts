@@ -23,4 +23,6 @@ ckb-next --background &
 killall redshift-gtk
 redshift-gtk &
 
+randbg
+
 disown
