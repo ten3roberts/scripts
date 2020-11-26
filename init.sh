@@ -3,6 +3,8 @@
 
 # Load XResources
 xrdb $HOME/.config/xresources/Xresources
+# Reload pywal colorscheme to xrdb
+xrdb -merge $HOME/.cache/wal/colors.Xresources
 
 # Update rust
 rustup update &
@@ -17,12 +19,15 @@ ksuperkey
 # Autolaunch programs
 
 # Start CKB-next
-killall ckb-next
-ckb-next --background &
+# killall ckb-next
+# ckb-next --background &
 
 killall redshift-gtk
 redshift-gtk &
 
 randbg
+
+dwmblocks &
+light-locker &
 
 disown
