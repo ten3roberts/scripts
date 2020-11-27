@@ -1,7 +1,10 @@
 #!/bin/bash
 app_name=$1
+[ -z "$2" ] && exec_name="$1" || exec_name="$2"
+
+echo $exec_name
 workspace_number=`wmctrl -d | grep '\*' | cut -d' ' -f 1`
-win_list=`wmctrl -lx | grep -i $app_name | grep " $workspace_number " | awk '{print $1}'`
+win_list=`wmctrl -lx | grep -i $app_name | awk '{print $1}'`
 
 active_win_id=`xprop -root | grep '^_NET_ACTIVE_W' | awk -F'# 0x' '{print $2}' | awk -F', ' '{print $1}'`
 if [ "$active_win_id" == "0" ]; then
@@ -19,10 +22,7 @@ if [[ -n "${switch_to}" ]]
     then
         (wmctrl -ia "$switch_to") &
     else
-        if [[ -n "$2" ]]
-            then
-                ($2) &
-        fi
+        ("$exec_name") &
 fi
 
 exit 0
