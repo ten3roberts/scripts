@@ -15,7 +15,7 @@ xset r rate 250 50
 # Disable mouse acceleration
 maccel G403 -1
 
-ksuperkey
+# ksuperkey
 # Autolaunch programs
 
 # Start CKB-next
@@ -27,6 +27,7 @@ redshift-gtk &
 
 randbg
 
+picom &
 dwmblocks &
 light-locker &
 
