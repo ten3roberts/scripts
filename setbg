@@ -7,3 +7,4 @@
 [ "$1" = "-R" ] && $HOME/.fehbg
 
 feh --bg-fill "$1"
+# wal -i "$1"
