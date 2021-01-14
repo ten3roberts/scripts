@@ -26,6 +26,8 @@ killall redshift-gtk
 redshift-gtk &
 
 randbg
+killall dunst
+dunst &
 
 picom &
 dwmblocks &
