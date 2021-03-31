@@ -10,8 +10,6 @@ esac
 msgId="991049"
 
 volume=`pamixer --get-volume-human`
-volraw=`pamixer --get-volume`
-volume_bar=`progressbar.sh 20 + . $volraw`
-dunstify -a "volume" -u low -i audio-volume-high -r "$msgId" "Volume:  $volume  $volume_bar"
+dunstify -a "volume" -u low -i audio-volume-high -r "$msgId" "Volume: $volume"
 
 pkill -RTMIN+10 dwmblocks
